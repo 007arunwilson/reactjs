@@ -9,8 +9,10 @@ class App extends Component {
       <div title="Core base element" id="_core_element" className="App">
       <h1>Starting New React App !...</h1>
       <p>This is really working, and its awesome too ...</p>
-      <Person/>
-      <Animal/>
+      <Person name="Arun" age="25"/>
+      <Person name="Varun" age="25" >Brilliant Boy</Person>
+      <Person name="Kiran" age="27" />
+      {/*<Animal/>*/}
       </div>
       // <h1>Another Element</h1>
     );
