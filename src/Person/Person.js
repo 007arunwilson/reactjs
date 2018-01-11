@@ -1,7 +1,7 @@
 import React from 'react';
 
 const person = () => {
-  return <p>Im a from person component</p>
+  return <p><b>Louis Pilip</b> from person component</p>
 };
 
 export default person;
