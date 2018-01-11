@@ -10,7 +10,9 @@ class App extends Component {
       <h1>Starting New React App !...</h1>
       <p>This is really working, and its awesome too ...</p>
       <Person/>
-      <Animal/>
+      <Person/>
+      <Person/>
+      {/*<Animal/>*/}
       </div>
       // <h1>Another Element</h1>
     );
