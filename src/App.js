@@ -60,23 +60,14 @@ personsSwitcher = ()=>{
       backgroundColor:'#fff',
       border:'1px solid #ccc',
       padding:'4px 16px',
-      borderRadius:'8px !important;',
       cursor:'pointer',
     }
 
+    let persons = null;
 
-    return (
-      <div title="Core base element" id="_core_element" className="App">
-      <h1>Starting New React App !...</h1>
-      <p>{this.state.title}</p>
-      <button
-        style={button_style}
-         onClick={this.personsSwitcher} >Persons Toggler</button>
-      <button
-      style={button_style}
-       onClick={this.changeDynamicTitle.bind(this,Math.random(),'Parameter 2')} >Action Button</button>
-      <hr/>
-      {this.state.showPersons?
+    if(this.state.showPersons)
+    {
+      persons = (
         <div className="perons-wrapper">
 
           <Person
@@ -93,9 +84,22 @@ personsSwitcher = ()=>{
           age={this.state.persons[2].age} />
 
         </div>
-        :null
+      )
+    }
 
-      }
+    return (
+      <div title="Core base element" id="_core_element" className="App">
+      <h1>Starting New React App !...</h1>
+      <p>{this.state.title}</p>
+      <button
+        style={button_style}
+         onClick={this.personsSwitcher} >Persons Toggler</button>
+      <button
+      style={button_style}
+       onClick={this.changeDynamicTitle.bind(this,Math.random(),'Parameter 2')} >Action Button</button>
+      <hr/>
+
+      {persons}
 
       {/*<Animal/>*/}
       </div>
