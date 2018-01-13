@@ -11,6 +11,7 @@ class App extends Component {
       {name:'Davidson David',age:27},
       {name:'Pearson Pear',age:28},
       {name:'Paulson Paul',age:20},
+      {name:'Erickson Erick',age:22},
     ],
     title:'Dynamic Random Title '+Math.random(),
     showPersons:false,
@@ -69,20 +70,9 @@ personsSwitcher = ()=>{
     {
       persons = (
         <div className="perons-wrapper">
-
-          <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-          onchangefn={this.inputChangeHandler}/>
-
-          <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age} />
-
-          <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age} />
-
+          {
+            this.state.persons.map(person=><Person name={person.name} age={person.age}/> )
+          }
         </div>
       )
     }
