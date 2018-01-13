@@ -13,6 +13,7 @@ class App extends Component {
       {name:'Paulson Paul',age:20},
     ],
     title:'Dynamic Random Title '+Math.random(),
+    showPersons:false,
   }
 
 switchNameEventHandler = () => {
@@ -47,25 +48,54 @@ inputChangeHandler = (event) => {
 }
 
 
+personsSwitcher = ()=>{
+  const current_state = this.state.showPersons;
+  this.setState({showPersons:!current_state});
+}
+
+
   render() {
+
+    const button_style = {
+      backgroundColor:'#fff',
+      border:'1px solid #ccc',
+      padding:'4px 16px',
+      borderRadius:'8px !important;',
+      cursor:'pointer',
+    }
+
+
     return (
       <div title="Core base element" id="_core_element" className="App">
       <h1>Starting New React App !...</h1>
       <p>{this.state.title}</p>
-      <button onClick={this.changeDynamicTitle.bind(this,Math.random(),'Parameter 2')} >Action Button</button>
+      <button
+        style={button_style}
+         onClick={this.personsSwitcher} >Persons Toggler</button>
+      <button
+      style={button_style}
+       onClick={this.changeDynamicTitle.bind(this,Math.random(),'Parameter 2')} >Action Button</button>
       <hr/>
-      <Person
-      name={this.state.persons[0].name}
-      age={this.state.persons[0].age}
-      onchangefn={this.inputChangeHandler}/>
+      {this.state.showPersons?
+        <div className="perons-wrapper">
 
-      <Person
-      name={this.state.persons[1].name}
-      age={this.state.persons[1].age} />
+          <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
+          onchangefn={this.inputChangeHandler}/>
 
-      <Person
-      name={this.state.persons[2].name}
-      age={this.state.persons[2].age} />
+          <Person
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age} />
+
+          <Person
+          name={this.state.persons[2].name}
+          age={this.state.persons[2].age} />
+
+        </div>
+        :null
+
+      }
 
       {/*<Animal/>*/}
       </div>
