@@ -53,7 +53,7 @@ deletePersonHandler = ( deleteIndex )=>{
 
   console.log(deleteIndex);
 
-  let personsList = this.state.persons.slice();
+  let personsList = [...this.state.persons];
   personsList.splice(deleteIndex,1)
   this.setState({persons:personsList});
 
