@@ -49,6 +49,18 @@ inputChangeHandler = (event) => {
 }
 
 
+deletePersonHandler = ( deleteIndex )=>{
+
+  console.log(deleteIndex);
+
+  let personsList = this.state.persons;
+  personsList.splice(deleteIndex,1)
+  this.setState({persons:personsList});
+
+
+}
+
+
 personsSwitcher = ()=>{
   const current_state = this.state.showPersons;
   this.setState({showPersons:!current_state});
@@ -71,7 +83,7 @@ personsSwitcher = ()=>{
       persons = (
         <div className="perons-wrapper">
           {
-            this.state.persons.map(person=><Person name={person.name} age={person.age}/> )
+            this.state.persons.map((person,index)=><Person name={person.name} age={person.age} click={this.deletePersonHandler.bind(this,index)} /> )
           }
         </div>
       )
