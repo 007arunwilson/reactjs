@@ -6,3 +6,9 @@
   box-shadow: 0px 2px 2px #ccc;
   text-align: center;
 }
+
+.delete-perosn-btn {
+  display: block;
+  clear: both;
+  float: right;
+}

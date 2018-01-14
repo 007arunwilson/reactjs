@@ -28,7 +28,6 @@ switchNameEventHandler = () => {
   ]})
 }
 
-
 changeDynamicTitle = (randomTitle,parameter2) => {
 
   this.setState({
@@ -37,15 +36,20 @@ changeDynamicTitle = (randomTitle,parameter2) => {
 
 }
 
-inputChangeHandler = (event) => {
-  //console.log('Was CLicked');
-  //Don't do this // this.state.persons[0].name = 'Madison Madi';
-  this.setState({persons:[
-    {id:1,name: event.target.value,age:26},
-    {id:2,name:'Davidson David',age:27},
-    {id:3,name:'Pearson Pear',age:28},
-    {id:4,name:'Paulson Paul',age:20},
-  ]})
+inputChangeHandler = (personId,event) => {
+
+  const personIndex = this.state.persons.findIndex(person => {
+    return person.id===personId;
+  });
+
+  const persons = [...this.state.persons];
+  const person = persons[personIndex];
+
+  person.name = event.target.value;
+  persons[personIndex] = person;
+  this.setState({persons:persons});
+
+
 }
 
 
@@ -83,7 +87,14 @@ personsSwitcher = ()=>{
       persons = (
         <div className="perons-wrapper">
           {
-            this.state.persons.map((person,index)=><Person key={person.id} name={person.name} age={person.age} click={this.deletePersonHandler.bind(this,index)} /> )
+            this.state.persons.map((person,index)=>{
+              return <Person
+                key={person.id}
+                name={person.name}
+                age={person.age}
+                deleteClick={this.deletePersonHandler.bind(this,index)}
+                onChange={this.inputChangeHandler.bind(this,person.id)} />
+            } )
           }
         </div>
       )
