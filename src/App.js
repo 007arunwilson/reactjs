@@ -36,7 +36,7 @@ changeDynamicTitle = (randomTitle,parameter2) => {
 
 }
 
-inputChangeHandler = (personId,event) => {
+inputChangeHandler = (event,personId) => {
 
   const personIndex = this.state.persons.findIndex(person => {
     return person.id===personId;
@@ -93,7 +93,7 @@ personsSwitcher = ()=>{
                 name={person.name}
                 age={person.age}
                 deleteClick={this.deletePersonHandler.bind(this,index)}
-                onChange={this.inputChangeHandler.bind(this,person.id)} />
+                onChange={(event)=>this.inputChangeHandler(event,person.id)} />
             } )
           }
         </div>
