@@ -7,11 +7,11 @@ class App extends Component {
 
   state = {
     persons:[
-      {name:'Madison Madi',age:26},
-      {name:'Davidson David',age:27},
-      {name:'Pearson Pear',age:28},
-      {name:'Paulson Paul',age:20},
-      {name:'Erickson Erick',age:22},
+      {id:1,name:'Madison Madi',age:26},
+      {id:2,name:'Davidson David',age:27},
+      {id:3,name:'Pearson Pear',age:28},
+      {id:4,name:'Paulson Paul',age:20},
+      {id:5,name:'Erickson Erick',age:22},
     ],
     title:'Dynamic Random Title '+Math.random(),
     showPersons:false,
@@ -41,10 +41,10 @@ inputChangeHandler = (event) => {
   //console.log('Was CLicked');
   //Don't do this // this.state.persons[0].name = 'Madison Madi';
   this.setState({persons:[
-    {name: event.target.value,age:26},
-    {name:'Davidson David',age:27},
-    {name:'Pearson Pear',age:28},
-    {name:'Paulson Paul',age:20},
+    {id:1,name: event.target.value,age:26},
+    {id:2,name:'Davidson David',age:27},
+    {id:3,name:'Pearson Pear',age:28},
+    {id:4,name:'Paulson Paul',age:20},
   ]})
 }
 
@@ -83,7 +83,7 @@ personsSwitcher = ()=>{
       persons = (
         <div className="perons-wrapper">
           {
-            this.state.persons.map((person,index)=><Person name={person.name} age={person.age} click={this.deletePersonHandler.bind(this,index)} /> )
+            this.state.persons.map((person,index)=><Person key={person.id} name={person.name} age={person.age} click={this.deletePersonHandler.bind(this,index)} /> )
           }
         </div>
       )
