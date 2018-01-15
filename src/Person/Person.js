@@ -1,5 +1,5 @@
 import React from 'react';
-import './Person.css';
+import classes from './Person.css';
 
 const person = (props) => {
 
@@ -10,13 +10,13 @@ const person = (props) => {
   };
 
   return (
-    <div style={personParentStyle} className="person" >
+    <div style={personParentStyle} className={classes.person} >
     <p><b>{props.name} </b>from person,with {props.age} years old
     <br/>
       <small><i>Quote : {props.children}</i></small>
     </p>
     <input onChange={props.onChange} value={props.name} type="text"/>
-    <button onClick={props.deleteClick} className="delete-perosn-btn" >Delete</button>
+    <button onClick={props.deleteClick} className={classes.delete_person_btn} >Delete</button>
     </div>
   )
 };

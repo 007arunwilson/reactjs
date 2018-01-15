@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 import Animal from './Animal/Animal';
 
@@ -122,14 +122,13 @@ personsSwitcher = ()=>{
     }
 
     return (
-      <div title="Core base element" id="_core_element" className="App">
-      <h1>Starting New React App !...</h1>
+      <div title="Core base element" id="_core_element" className={classes.App}>
+      <h1 className={classes.app_title} >Starting New React App !...</h1>
       <p>{this.state.title}</p>
       <button
         style={toggle_button_style}
          onClick={this.personsSwitcher} >Persons Toggler</button>
       <button
-      style={button_style}
        onClick={this.changeDynamicTitle.bind(this,Math.random(),'Parameter 2')} >Action Button</button>
       <hr/>
 
