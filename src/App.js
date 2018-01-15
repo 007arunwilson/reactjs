@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 import Animal from './Animal/Animal';
-import Radium,{StyleRoot} from 'radium';
 
 class App extends Component {
 
@@ -123,7 +122,6 @@ personsSwitcher = ()=>{
     }
 
     return (
-      <StyleRoot>
       <div title="Core base element" id="_core_element" className="App">
       <h1>Starting New React App !...</h1>
       <p>{this.state.title}</p>
@@ -139,7 +137,6 @@ personsSwitcher = ()=>{
 
       {/*<Animal/>*/}
       </div>
-      </StyleRoot>
       // <h1>Another Element</h1>
     );
 
@@ -148,4 +145,4 @@ personsSwitcher = ()=>{
   }
 }
 
-export default Radium(App);
+export default App;
