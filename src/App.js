@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 import Animal from './Animal/Animal';
+import Radium from 'radium';
 
 class App extends Component {
 
@@ -74,16 +75,35 @@ personsSwitcher = ()=>{
   render() {
 
     const button_style = {
-      backgroundColor:'#fff',
+      backgroundColor:'#FF5733',
+      color:'#fff',
       border:'1px solid #ccc',
       padding:'4px 16px',
       cursor:'pointer',
+    }
+
+
+    const toggle_button_style = {
+      backgroundColor:'#FF5733',
+      color:'#fff',
+      border:'1px solid #ccc',
+      padding:'4px 16px',
+      cursor:'pointer',
+      ':hover':{
+        textDecoration:'underline',
+      }
     }
 
     let persons = null;
 
     if(this.state.showPersons)
     {
+
+      toggle_button_style.backgroundColor = '#54AD00';
+      toggle_button_style[':hover'] = {
+        backgroundColor:'#0083AD',
+        color:'#B7EEFF',
+      }
       persons = (
         <div className="perons-wrapper">
           {
@@ -98,6 +118,8 @@ personsSwitcher = ()=>{
           }
         </div>
       )
+
+
     }
 
     return (
@@ -105,7 +127,7 @@ personsSwitcher = ()=>{
       <h1>Starting New React App !...</h1>
       <p>{this.state.title}</p>
       <button
-        style={button_style}
+        style={toggle_button_style}
          onClick={this.personsSwitcher} >Persons Toggler</button>
       <button
       style={button_style}
@@ -124,4 +146,4 @@ personsSwitcher = ()=>{
   }
 }
 
-export default App;
+export default Radium(App);
