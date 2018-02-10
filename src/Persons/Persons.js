@@ -5,43 +5,54 @@ import Person from './Person/Person';
 export default class Persons extends Component {
 
 
-    // constructor(props){
+    constructor(props){
 
-    //     super(props);
+        super(props);
     
-    //   }
-      
-      
+      }
     
-    //   componentWillMount = () => {
+      componentWillMount = () => {
     
-    //     console.log('Compoenent Will Mount Called ..');
+        console.log('Compoenent Will Mount Called ..');
     
-    //   }
+      }
     
-    //   componentDidMount = () => {
+      componentDidMount = () => {
     
-    //     console.log('Compoenent Did Mount Called ..');
+        console.log('Compoenent Did Mount Called ..');
     
-    //   }
+      }
     
-    //   componentWillUnmount = () => {
+      componentWillUnmount = () => {
     
-    //     console.log('Compoenent Un Mount Called ..');
+        console.log('Compoenent Un Mount Called ..');
     
-    //   }
+      }
     
-    //   componentWillReceiveProps = (updatedProps) =>{
+      componentWillReceiveProps = (updatedProps) =>{
     
-    //     console.log('[componentWillReceiveProps] called ..',updatedProps);
-    //   }
+        console.log('[componentWillReceiveProps] called ..',updatedProps);
+      }
     
-    //   shouldComponentUpdate = (updatedProps,updatedState) => {
+      shouldComponentUpdate = (updatedProps,updatedState) => {
     
-    //     console.log('[componentShouldUpdate] called');
-    //     return false;
+        console.log('[componentShouldUpdate] called');
+        return this.props!==updatedProps;
     
-    //   }
+      }
+
+       componentWillUpdate = (updatedProps,updatedState)=>{
+
+        console.log('Component Will update ..');
+
+       }
+
+
+       componentDidUpdate = ()=>{
+
+        console.log('Component Did update ..');
+
+       }
 
     render(){
 
