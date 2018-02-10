@@ -3,32 +3,6 @@ import classes from './Person.css';
 
 class Person extends Component {
 
-  constructor(props){
-
-    super(props);
-
-  }
-  
-  
-
-  componentWillMount = () => {
-
-    console.log('Compoenent Will Mount Called ..');
-
-  }
-
-  componentDidMount = () => {
-
-    console.log('Compoenent Did Mount Called ..');
-
-  }
-
-  componentWillUnmount = () => {
-
-    console.log('Compoenent Un Mount Called ..');
-
-  }
-
   render = ()=>{
 
   const personParentStyle = {
