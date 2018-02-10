@@ -8,10 +8,6 @@ class App extends Component {
   state = {
     persons:[
       {id:1,name:'Madison Madi',age:26},
-      {id:2,name:'Davidson David',age:27},
-      {id:3,name:'Pearson Pear',age:28},
-      {id:4,name:'Paulson Paul',age:20},
-      {id:5,name:'Erickson Erick',age:22},
     ],
     title:'Dynamic Random Title '+Math.random(),
     showPersons:false,

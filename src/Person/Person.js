@@ -1,7 +1,35 @@
-import React from 'react';
+import React,{Component} from 'react';
 import classes from './Person.css';
 
-const person = (props) => {
+class Person extends Component {
+
+  constructor(props){
+
+    super(props);
+
+  }
+  
+  
+
+  componentWillMount = () => {
+
+    console.log('Compoenent Will Mount Called ..');
+
+  }
+
+  componentDidMount = () => {
+
+    console.log('Compoenent Did Mount Called ..');
+
+  }
+
+  componentWillUnmount = () => {
+
+    console.log('Compoenent Un Mount Called ..');
+
+  }
+
+  render = ()=>{
 
   const personParentStyle = {
     border:'1px solid #ccc',
@@ -11,14 +39,18 @@ const person = (props) => {
 
   return (
     <div style={personParentStyle} className={classes.person} >
-    <p><b>{props.name} </b>from person,with {props.age} years old
+    <p><b>{this.props.name} </b>from person,with {this.props.age} years old
     <br/>
-      <small><i>Quote : {props.children}</i></small>
+      <small><i>Quote : {this.props.children}</i></small>
     </p>
-    <input onChange={props.onChange} value={props.name} type="text"/>
-    <button onClick={props.deleteClick} className={classes.delete_person_btn} >Delete</button>
+    <input onChange={this.props.onChange} value={this.props.name} type="text"/>
+    <button onClick={this.props.deleteClick} className={classes.delete_person_btn} >Delete</button>
     </div>
   )
+
+
 };
 
-export default person;
+}
+
+export default Person;
