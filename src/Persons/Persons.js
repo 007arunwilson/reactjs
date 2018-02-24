@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import Person from './Person/Person';
+import Aux from '../Hoc/Aux';
+import WithClass from '../Hoc/WithClass';
 
 
 export default class Persons extends Component {
@@ -57,7 +59,7 @@ export default class Persons extends Component {
     render(){
 
         return(
-            <div className="perons-wrapper">
+            <WithClass classes="persons-wrapper" >
           {
             this.props.persons.map((person,index)=>{
               return <Person
@@ -68,7 +70,8 @@ export default class Persons extends Component {
                 onChange={(event)=>this.props.inputChangeHandler(event,person.id)} />
             } )
           }
-        </div>
+          </WithClass>
+        
         )
 
     }
