@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Person from './Person/Person';
 import Aux from '../Hoc/Aux';
 import WithClass from '../Hoc/WithClass';
+import withClassMod from '../Hoc/withClassMod';
 
 
 class Persons extends Component {
@@ -59,8 +60,7 @@ class Persons extends Component {
     render(){
 
         return(
-            <WithClass classes="persons-wrapper" >
-          {
+            
             this.props.persons.map((person,index)=>{
               return <Person
                 key={person.id}
@@ -69,8 +69,6 @@ class Persons extends Component {
                 deleteClick={this.props.deletePersonHandler.bind(this,index)}
                 onChange={(event)=>this.props.inputChangeHandler(event,person.id)} />
             } )
-          }
-          </WithClass>
         
         )
 
@@ -78,4 +76,4 @@ class Persons extends Component {
 
 }
 
-export default Persons;
+export default withClassMod(Persons,'persons-wrapper');

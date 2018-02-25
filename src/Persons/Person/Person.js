@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import classes from './Person.css';
+import withClassMod from '../../Hoc/withClassMod';
 
 class Person extends Component {
 
@@ -12,7 +13,7 @@ class Person extends Component {
   };
 
   return (
-    <div style={personParentStyle} className={classes.person} >
+    <div style={personParentStyle} >
     <p><b>{this.props.name} </b>from person,with {this.props.age} years old
     <br/>
       <small><i>Quote : {this.props.children}</i></small>
@@ -27,4 +28,4 @@ class Person extends Component {
 
 }
 
-export default Person;
+export default withClassMod(Person,classes.person);
