@@ -4,7 +4,7 @@ import Aux from '../Hoc/Aux';
 import WithClass from '../Hoc/WithClass';
 
 
-export default class Persons extends Component {
+class Persons extends Component {
 
 
     constructor(props){
@@ -77,3 +77,5 @@ export default class Persons extends Component {
     }
 
 }
+
+export default Persons;

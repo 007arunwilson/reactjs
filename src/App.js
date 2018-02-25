@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './App.css';
 import Persons from './Persons/Persons';
 import Animal from './Animal/Animal';
+import withClassMod from './Hoc/withClassMod';
 
 class App extends Component {
 
@@ -122,4 +123,4 @@ personsSwitcher = ()=>{
   }
 }
 
-export default App;
+export default withClassMod(App,'app-container');
