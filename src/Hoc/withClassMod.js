@@ -2,11 +2,13 @@ import React from 'react';
 
 const withClassMod = (WrappedCompoenent,className) => {
     
-    return (props) => (
+    const withClassMod = (props) => (
         <div className={className}>
             <WrappedCompoenent {...props} />
         </div>
     )
+
+    return withClassMod;
 
 }
 
