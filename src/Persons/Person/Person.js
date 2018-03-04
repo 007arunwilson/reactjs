@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import classes from './Person.css';
 import withClassMod from '../../Hoc/withClassMod';
+import PropTypes from 'prop-types';
 
 class Person extends Component {
 
@@ -29,3 +30,8 @@ class Person extends Component {
 }
 
 export default withClassMod(Person,classes.person);
+
+Person.propTypes = {
+  name:PropTypes.string,
+  age:PropTypes.number,
+}
