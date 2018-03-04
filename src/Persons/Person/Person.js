@@ -5,6 +5,12 @@ import PropTypes from 'prop-types';
 
 class Person extends Component {
 
+  componentDidMount = () => {
+
+    if(this.props.position === 0)    this.inputElement.focus();
+
+  }
+
   render = ()=>{
 
   const personParentStyle = {
@@ -19,7 +25,7 @@ class Person extends Component {
     <br/>
       <small><i>Quote : {this.props.children}</i></small>
     </p>
-    <input onChange={this.props.onChange} value={this.props.name} type="text"/>
+    <input ref={(inp)=>{ this.inputElement = inp }} onChange={this.props.onChange} value={this.props.name} type="text"/>
     <button onClick={this.props.deleteClick} className={classes.delete_person_btn} >Delete</button>
     </div>
   )

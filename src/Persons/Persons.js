@@ -64,6 +64,7 @@ class Persons extends Component {
             this.props.persons.map((person,index)=>{
               return <Person
                 key={person.id}
+                position={index}
                 name={person.name}
                 age={person.age}
                 deleteClick={this.props.deletePersonHandler.bind(this,index)}
