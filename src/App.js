@@ -13,6 +13,7 @@ class App extends Component {
     ],
     title:'Dynamic Random Title '+Math.random(),
     showPersons:false,
+    toggleClicked:0,
   }
 
 changeDynamicTitle = (randomTitle,parameter2) => {
@@ -53,7 +54,14 @@ deletePersonHandler = ( deleteIndex )=>{
 
 personsSwitcher = ()=>{
   const current_state = this.state.showPersons;
-  this.setState({showPersons:!current_state});
+  this.setState((prevState,props)=>{
+
+    return {
+      showPersons:!current_state,
+      toggleClicked:prevState.toggleClicked+1,
+    }
+
+  });
 }
 
 
